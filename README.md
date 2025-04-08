@@ -34,49 +34,49 @@ An Arduino-based robot equipped with multiple sensors for environmental awarenes
 
 4. Upload the code to your board using PlatformIO
 
-### WIRING
-explained for begginers:
+## Wiring
 
-HC-SRO4 (Ultrasonic):
-Trig - D2
-Echo - D3
-Vcc - 5v
-Gnd - ground
+### HC-SR04 (Ultrasonic Sensor)
+- **Trig** - D2
+- **Echo** - D3
+- **Vcc** - 5V
+- **GND** - Ground
 
-IR sensor module:
-R (sensor pin) - D4
-G - ground
-Y - 5v
+### IR Sensor Module
+- **R (sensor pin)** - D4
+- **GND** - Ground
+- **Y (5V)** - 5V
 
-Rotary encoder:
-CLK - D5
-DT - D6
-SW (button pin) - D7
-+ - 5v
-GND - ground
+### Rotary Encoder
+- **CLK** - D5
+- **DT** - D6
+- **SW (button pin)** - D7
+- **+** - 5V
+- **GND** - Ground
 
-buzzer (if using):
-short side (-) - ground
-long side (+) - through a transistor controlled by pin 8 to vcc
-(buzzer uses too much voltage and current which the nano can't provide, therefore we use a transistor connected to 5v for a steady power supply)
+### Buzzer (if using)
+- **Short side (-)** - Ground
+- **Long side (+)** - Through a transistor controlled by pin 8 to 5V
 
-RFID (RC522):
-SDA (SS) - D10
-RST - D9
-SCK - D13
-MOS - D11
-MISO - D12
-GND - ground
-3.3v -3.3v (IMPORTANT, only component thet uses 3.3v, any more will fry it)
+*Note: The buzzer uses too much voltage and current for the Arduino Nano, so we use a transistor connected to 5V for a steady power supply.*
 
-I2C pins:
-(can change depending on arduino model)
-RTC and LCD:
-SDA- A5
-SCL - A4
+### RFID (RC522)
+- **SDA (SS)** - D10
+- **RST** - D9
+- **SCK** - D13
+- **MOSI** - D11
+- **MISO** - D12
+- **GND** - Ground
+- **3.3V** - 3.3V (Important: This is the only component that uses 3.3V. Using more will damage the module.)
+
+### I2C Pins (RTC and LCD)
+*(These can change depending on your Arduino model.)*
+- **SDA** - A5
+- **SCL** - A4
 
 
-### LICENSE
+
+## LICENSE
 MIT – you are free to use, modify, and distribute this project.
 
 
