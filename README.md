@@ -20,7 +20,7 @@ An Arduino-based robot equipped with multiple sensors for environmental awarenes
 - RTC module
 - LCD with its I2C module for one wire communication
 - rotary encoder
-- preferably a buzzer
+- preferably a buzzer (active, code must be modified for passive buzzers)
 - PlatformIO extension for VS Code
 
 ### Setup
@@ -34,5 +34,49 @@ An Arduino-based robot equipped with multiple sensors for environmental awarenes
 
 4. Upload the code to your board using PlatformIO
 
+### WIRING
+explained for begginers:
+
+HC-SRO4 (Ultrasonic):
+Trig - D2
+Echo - D3
+Vcc - 5v
+Gnd - ground
+
+IR sensor module:
+R (sensor pin) - D4
+G - ground
+Y - 5v
+
+Rotary encoder:
+CLK - D5
+DT - D6
+SW (button pin) - D7
++ - 5v
+GND - ground
+
+buzzer (if using):
+short side (-) - ground
+long side (+) - through a transistor controlled by pin 8 to vcc
+(buzzer uses too much voltage and current which the nano can't provide, therefore we use a transistor connected to 5v for a steady power supply)
+
+RFID (RC522):
+SDA (SS) - D10
+RST - D9
+SCK - D13
+MOS - D11
+MISO - D12
+GND - ground
+3.3v -3.3v (IMPORTANT, only component thet uses 3.3v, any more will fry it)
+
+I2C pins:
+(can change depending on arduino model)
+RTC and LCD:
+SDA- A5
+SCL - A4
+
+
 ### LICENSE
 MIT – you are free to use, modify, and distribute this project.
+
+
